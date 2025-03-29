@@ -44,6 +44,30 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Free PDF Section */}
+      <section className="bg-blue-50 py-20">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-6">무료 PDF 가이드</h2>
+          <p className="text-xl text-gray-600 mb-8">
+            1분안에 창업하는 비법 : MVP 테스트를 통해서 사업성을 검증하세요!
+          </p>
+          <form className="max-w-md mx-auto">
+            <input
+              type="email"
+              placeholder="이메일 주소를 입력하세요"
+              className="w-full px-4 py-3 rounded-lg mb-4 border"
+            />
+            <a
+              href="/1min-startup-guide.pdf"
+              download
+              className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700"
+            >
+              무료 PDF 받기
+            </a>
+          </form>
+        </div>
+      </section>
+
       {/* Pricing Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -226,30 +250,6 @@ export default function Home() {
               연간 구독 시 17% 할인
             </p>
           </div>
-        </div>
-      </section>
-
-      {/* Free PDF Section */}
-      <section className="bg-blue-50 py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-6">무료 PDF 가이드</h2>
-          <p className="text-xl text-gray-600 mb-8">
-            1분안에 창업하는 비법 : MVP 테스트를 통해서 사업성을 검증하세요!
-          </p>
-          <form className="max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="이메일 주소를 입력하세요"
-              className="w-full px-4 py-3 rounded-lg mb-4 border"
-            />
-            <a
-              href="/1min-startup-guide.pdf"
-              download
-              className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700"
-            >
-              무료 PDF 받기
-            </a>
-          </form>
         </div>
       </section>
 
