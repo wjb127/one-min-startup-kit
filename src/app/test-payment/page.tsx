@@ -8,9 +8,9 @@ export default function TestPayment() {
           <h1 className="text-2xl font-bold text-center mb-8">가상 결제 테스트</h1>
           
           <div className="space-y-6">
-            <PaymentButton price={49000} productName="스탠다드 플랜 (월)" />
+            <PaymentButton price={29000} productName="스탠다드 플랜 (월)" />
             <PaymentButton price={99000} productName="프리미엄 플랜 (월)" />
-            <PaymentButton price={490000} productName="스탠다드 플랜 (연간)" />
+            <PaymentButton price={290000} productName="스탠다드 플랜 (연간)" />
             <PaymentButton price={990000} productName="프리미엄 플랜 (연간)" />
           </div>
 

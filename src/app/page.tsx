@@ -107,7 +107,7 @@ export default function Home() {
               <div className="text-center">
                 <h3 className="text-2xl font-bold text-gray-900">스탠다드</h3>
                 <p className="mt-4 text-4xl font-bold text-gray-900">
-                  ₩49,000
+                  ₩29,000
                   <span className="text-lg text-gray-500">/월</span>
                 </p>
               </div>
