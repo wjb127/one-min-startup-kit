@@ -29,7 +29,7 @@ export default function SignUpPage() {
 
       if (authData.user) {
         // 프로필 생성 확인
-        const { data: profileData, error: profileError } = await supabase
+        const { error: profileError } = await supabase
           .from('user_profiles')
           .select('*')
           .eq('id', authData.user.id)

@@ -29,7 +29,7 @@ export default function LoginPage() {
 
       if (authData.user) {
         // 프로필 정보 가져오기
-        const { data: profileData, error: profileError } = await supabase
+        const { error: profileError } = await supabase
           .from('user_profiles')
           .select('*')
           .eq('id', authData.user.id)
