@@ -1,0 +1,62 @@
+%PDF-1.7
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /Resources << /Font << /F1 4 0 R >> >> /MediaBox [0 0 612 792] /Contents 5 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 44 >>
+stream
+BT
+/F1 12 Tf
+72 712 Td
+(1분안에 창업하는 비법) Tj
+0 -20 Td
+(MVP 테스트를 통해서 사업성을 검증하세요!) Tj
+0 -40 Td
+(1. 사업 아이템 선정) Tj
+0 -20 Td
+(- 시장 조사) Tj
+0 -20 Td
+(- 경쟁사 분석) Tj
+0 -20 Td
+(- 타겟 고객 정의) Tj
+0 -40 Td
+(2. MVP 테스트) Tj
+0 -20 Td
+(- 랜딩 페이지 제작) Tj
+0 -20 Td
+(- 이메일 수집) Tj
+0 -20 Td
+(- 가상 결제 버튼) Tj
+0 -40 Td
+(3. 데이터 분석) Tj
+0 -20 Td
+(- 방문자 통계) Tj
+0 -20 Td
+(- 이메일 수집률) Tj
+0 -20 Td
+(- 결제 버튼 클릭률) Tj
+ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f
+0000000010 00000 n
+0000000070 00000 n
+0000000120 00000 n
+0000000220 00000 n
+0000000320 00000 n
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+392
+%%EOF 

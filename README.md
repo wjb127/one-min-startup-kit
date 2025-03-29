@@ -1,3 +1,48 @@
+# 1분 창업 키트
+
+AI를 활용한 랜딩 페이지 생성 및 MVP 테스트 서비스
+
+## 주요 기능
+
+- AI 랜딩 페이지 생성
+- MVP 테스트 (가상 결제 버튼, 이메일 수집)
+- 실시간 데이터 분석
+- 구글 애즈 연동
+
+## 기술 스택
+
+- Next.js
+- TypeScript
+- Tailwind CSS
+- Supabase
+
+## 시작하기
+
+```bash
+# 의존성 설치
+npm install
+
+# 개발 서버 실행
+npm run dev
+
+# 프로덕션 빌드
+npm run build
+
+# 프로덕션 서버 실행
+npm start
+```
+
+## 가격 안내
+
+- 무료 플랜: 7일 무료 체험
+- 스탠다드: ₩49,000/월
+- 프리미엄: ₩99,000/월
+
+## 연락처
+
+- 이메일: wjb127@naver.com
+- 전화: 010-5056-8463
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
