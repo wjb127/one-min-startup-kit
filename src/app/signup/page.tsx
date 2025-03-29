@@ -3,8 +3,11 @@
 import { useState } from 'react'
 import { supabase } from '@/lib/supabase'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import { AuthError } from '@supabase/supabase-js'
 
 export default function SignUpPage() {
+  const router = useRouter()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
@@ -16,17 +19,38 @@ export default function SignUpPage() {
     setError(null)
 
     try {
-      const { error } = await supabase.auth.signUp({
+      // 회원가입
+      const { data: authData, error: authError } = await supabase.auth.signUp({
         email,
         password,
       })
 
-      if (error) throw error
+      if (authError) throw authError
 
-      // 회원가입 성공 시 로그인 페이지로 리다이렉트
-      window.location.href = '/login'
-    } catch (error: any) {
-      setError(error.message)
+      if (authData.user) {
+        // 프로필 생성 확인
+        const { data: profileData, error: profileError } = await supabase
+          .from('user_profiles')
+          .select('*')
+          .eq('id', authData.user.id)
+          .single()
+
+        if (profileError) {
+          console.error('프로필 생성 확인 중 오류:', profileError)
+          throw new Error('프로필 생성에 실패했습니다.')
+        }
+
+        // 회원가입 성공 시 로그인 페이지로 리다이렉트
+        router.push('/login')
+      }
+    } catch (error) {
+      if (error instanceof AuthError) {
+        setError(error.message)
+      } else if (error instanceof Error) {
+        setError(error.message)
+      } else {
+        setError('알 수 없는 오류가 발생했습니다.')
+      }
     } finally {
       setLoading(false)
     }

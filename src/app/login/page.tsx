@@ -3,8 +3,11 @@
 import { useState } from 'react'
 import { supabase } from '@/lib/supabase'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import { AuthError } from '@supabase/supabase-js'
 
 export default function LoginPage() {
+  const router = useRouter()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
@@ -16,17 +19,38 @@ export default function LoginPage() {
     setError(null)
 
     try {
-      const { error } = await supabase.auth.signInWithPassword({
+      // 로그인
+      const { data: authData, error: authError } = await supabase.auth.signInWithPassword({
         email,
         password,
       })
 
-      if (error) throw error
+      if (authError) throw authError
 
-      // 로그인 성공 시 리다이렉트
-      window.location.href = '/dashboard'
-    } catch (error: any) {
-      setError(error.message)
+      if (authData.user) {
+        // 프로필 정보 가져오기
+        const { data: profileData, error: profileError } = await supabase
+          .from('user_profiles')
+          .select('*')
+          .eq('id', authData.user.id)
+          .single()
+
+        if (profileError) {
+          console.error('프로필 정보 조회 중 오류:', profileError)
+          throw new Error('프로필 정보를 가져오는데 실패했습니다.')
+        }
+
+        // 로그인 성공 시 대시보드로 리다이렉트
+        router.push('/dashboard')
+      }
+    } catch (error) {
+      if (error instanceof AuthError) {
+        setError(error.message)
+      } else if (error instanceof Error) {
+        setError(error.message)
+      } else {
+        setError('알 수 없는 오류가 발생했습니다.')
+      }
     } finally {
       setLoading(false)
     }

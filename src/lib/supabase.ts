@@ -16,11 +16,26 @@ export type UserProfile = {
   created_at: string
 }
 
+export type LandingPageContent = {
+  title: string
+  description: string
+  features: string[]
+  pricing?: {
+    amount: number
+    currency: string
+    period: string
+  }
+  callToAction: {
+    text: string
+    link: string
+  }
+}
+
 export type LandingPage = {
   id: string
   user_id: string
   title: string
-  content: any
+  content: LandingPageContent
   created_at: string
   updated_at: string
 }
